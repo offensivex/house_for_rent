@@ -40,12 +40,13 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                     SizedBox(
                       height: 100,
                     ),
-                    Image.asset(
-                      'assets/forgot-password.png',
-                      // height: 180, // Adjust the height as needed
-                      width: double
-                          .infinity, // Set width to occupy the entire available space
-                      alignment: Alignment.center,
+                    CircleAvatar(
+                      radius: 80,
+                      backgroundImage: AssetImage(
+                          'assets/h.jpg'), // replace 'your_image.jpg' with your image file path
+                    ),
+                    SizedBox(
+                      height: 100,
                     ),
                     Text(
                       'Forgot Password',
@@ -82,7 +83,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                       height: 60,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          foregroundColor: Colors.white, backgroundColor: Colorz.appBarColor,
+                          foregroundColor: Colors.white,
+                          backgroundColor: Colorz.appBarColor,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8.0),
                           ),

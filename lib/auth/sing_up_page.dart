@@ -50,11 +50,10 @@ class _SignUpPageState extends State<SignUpPage> {
               SizedBox(
                 height: 10,
               ),
-              Image.asset(
-                'assets/h.jpg',
-                // height: 180, // Adjust the height as needed
-                width: 230, // Set width to occupy the entire available space
-                alignment: Alignment.center,
+              CircleAvatar(
+                radius: 80,
+                backgroundImage: AssetImage(
+                    'assets/h.jpg'), // replace 'your_image.jpg' with your image file path
               ),
               const SizedBox(
                 height: 10,

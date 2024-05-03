@@ -1,4 +1,5 @@
 import 'package:house_for_rent/auth/admin_login.dart';
+import 'package:house_for_rent/screens/getstarted.dart';
 
 import '../auth/forgot_password.dart';
 import '../screens/houses.dart';
@@ -42,11 +43,10 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 80,
                 ),
-                Image.asset(
-                  'assets/h.jpg',
-                  // height: 180, // Adjust the height as needed
-                  width: 250, // Set width to occupy the entire available space
-                  alignment: Alignment.center,
+                CircleAvatar(
+                  radius: 80,
+                  backgroundImage: AssetImage(
+                      'assets/h.jpg'), // replace 'your_image.jpg' with your image file path
                 ),
                 const SizedBox(
                   height: 50,
@@ -177,13 +177,13 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ]),
                 ),
-              const SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 RichText(
                   text: TextSpan(children: [
                     const TextSpan(
-                      text: "Admin? ",
+                      text: "Are you a landloard? ",
                       style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w700,
@@ -243,7 +243,7 @@ class _LoginPageState extends State<LoginPage> {
             Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(
-                builder: (context) => HousesPage(),
+                builder: (context) => GetStarted(),
               ),
               (route) =>
                   false, // This will remove all the routes until the new route is pushed

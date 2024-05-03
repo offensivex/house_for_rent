@@ -40,11 +40,10 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
                 const SizedBox(
                   height: 80,
                 ),
-                Image.asset(
-                  'assets/h.jpg',
-                  // height: 180, // Adjust the height as needed
-                  width: 250, // Set width to occupy the entire available space
-                  alignment: Alignment.center,
+                CircleAvatar(
+                  radius: 80,
+                  backgroundImage: AssetImage(
+                      'assets/h.jpg'), // replace 'your_image.jpg' with your image file path
                 ),
                 const SizedBox(
                   height: 50,

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:house_for_rent/auth/login_page.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-import 'screens/getstarted.dart';
-import 'screens/profile.dart';
-import 'screens/welcome.dart';
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-void main() {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -41,4 +44,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

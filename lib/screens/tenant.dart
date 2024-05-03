@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:numberpicker/numberpicker.dart';
 
 import 'houses.dart';
@@ -17,16 +16,21 @@ class _TenantPageState extends State<TenantPage> {
 
   @override
   Widget build(BuildContext context) {
+    // Getting screen dimensions
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(vertical: 40.0, horizontal: 20.0),
+          padding: EdgeInsets.symmetric(
+              vertical: screenHeight * 0.05, horizontal: screenWidth * 0.05),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              SizedBox(height: 50.0),
+              SizedBox(height: screenHeight * 0.1),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
@@ -39,38 +43,38 @@ class _TenantPageState extends State<TenantPage> {
                       },
                       icon: Icon(Icons.arrow_back),
                       color: Colors.white,
-                      iconSize: 30.0,
+                      iconSize: screenHeight * 0.03,
                     ),
                   ),
                   SizedBox(
-                    width: 50,
+                    width: screenWidth * 0.1,
                   ),
                   Text(
                     'TENANT',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 24.0,
+                      fontSize: screenHeight * 0.035,
                     ),
                     textAlign: TextAlign.center,
                   ),
                 ],
               ),
-              SizedBox(height: 70.0),
+              SizedBox(height: screenHeight * 0.1),
               Align(
                 alignment: Alignment.topLeft,
                 child: Text(
                   'Where to rent?',
                   style: TextStyle(
-                    fontSize: 19.0,
+                    fontSize: screenHeight * 0.025,
                   ),
                   textAlign: TextAlign.left,
                 ),
               ),
-              SizedBox(height: 20.0),
+              SizedBox(height: screenHeight * 0.02),
               DropdownButtonFormField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
+                    borderRadius: BorderRadius.circular(screenHeight * 0.01),
                   ),
                 ),
                 value: _selectedLocation,
@@ -95,45 +99,41 @@ class _TenantPageState extends State<TenantPage> {
                   });
                 },
               ),
-              SizedBox(height: 30.0),
+              SizedBox(height: screenHeight * 0.05),
               Align(
                 alignment: Alignment.topLeft,
                 child: Text(
                   'Price Range!',
                   style: TextStyle(
-                    fontSize: 19.0,
+                    fontSize: screenHeight * 0.025,
                   ),
                   textAlign: TextAlign.left,
                 ),
               ),
-              SizedBox(width: 35.0),
+              SizedBox(width: screenWidth * 0.05),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Expanded(
-                    child: Column(children: [
-                      // Text(
-                      //   'Start',
-                      //   style: TextStyle(
-                      //     fontWeight: FontWeight.bold,
-                      //   ),
-                      // ),
-                      NumberPicker(
-                        value: _startPrice,
-                        minValue: 10000,
-                        itemHeight: 30,
-                        step: 10000,
-                        maxValue: 1000000,
-                        onChanged: (value) {
-                          setState(() {
-                            _startPrice = value;
-                          });
-                        },
-                      ),
-                    ]),
+                  Flexible(
+                    child: Column(
+                      children: [
+                        NumberPicker(
+                          value: _startPrice,
+                          minValue: 10000,
+                          itemHeight: screenHeight * 0.03,
+                          step: 10000,
+                          maxValue: 1000000,
+                          onChanged: (value) {
+                            setState(() {
+                              _startPrice = value;
+                            });
+                          },
+                        ),
+                      ],
+                    ),
                   ),
-                  SizedBox(width: 35.0),
+                  SizedBox(width: screenWidth * 0.05),
                   Container(
                     decoration: BoxDecoration(
                         color: Colors.blue, shape: BoxShape.circle),
@@ -141,44 +141,40 @@ class _TenantPageState extends State<TenantPage> {
                       onPressed: () {},
                       icon: Icon(Icons.arrow_forward_ios),
                       color: Colors.white,
-                      iconSize: 35.0,
+                      iconSize: screenHeight * 0.05,
                     ),
                   ),
-                  SizedBox(width: 30.0),
-                  Expanded(
-                    child: Column(children: [
-                      // Text(
-                      //   'End',
-                      //   style: TextStyle(
-                      //     fontWeight: FontWeight.bold,
-                      //   ),
-                      // ),
-                      NumberPicker(
-                        value: _endPrice,
-                        minValue: 20000,
-                        itemHeight: 30,
-                        step: 10000,
-                        maxValue: 5000000,
-                        onChanged: (value) {
-                          setState(() {
-                            _endPrice = value;
-                          });
-                        },
-                      ),
-                    ]),
+                  SizedBox(width: screenWidth * 0.05),
+                  Flexible(
+                    child: Column(
+                      children: [
+                        NumberPicker(
+                          value: _endPrice,
+                          minValue: 20000,
+                          itemHeight: screenHeight * 0.03,
+                          step: 10000,
+                          maxValue: 5000000,
+                          onChanged: (value) {
+                            setState(() {
+                              _endPrice = value;
+                            });
+                          },
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
-              SizedBox(height: 20.0),
+              SizedBox(height: screenHeight * 0.02),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Align(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      'Number of bedromms?',
+                      'Number of bedrooms?',
                       style: TextStyle(
-                        fontSize: 20.0,
+                        fontSize: screenHeight * 0.025,
                       ),
                       textAlign: TextAlign.left,
                     ),
@@ -188,7 +184,7 @@ class _TenantPageState extends State<TenantPage> {
                     minValue: 0,
                     step: 1,
                     maxValue: 200,
-                    itemHeight: 30,
+                    itemHeight: screenHeight * 0.03,
                     onChanged: (value) {
                       setState(() {
                         _numberOfBedrooms = value;
@@ -197,7 +193,7 @@ class _TenantPageState extends State<TenantPage> {
                   ),
                 ],
               ),
-              SizedBox(height: 50.0),
+              SizedBox(height: screenHeight * 0.03),
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -209,15 +205,16 @@ class _TenantPageState extends State<TenantPage> {
                   foregroundColor: Colors.white,
                   backgroundColor: Colors.blue,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
+                    borderRadius: BorderRadius.circular(screenHeight * 0.01),
                   ),
                 ),
                 child: Padding(
-                  padding:
-                      EdgeInsets.symmetric(vertical: 15.0, horizontal: 120.0),
+                  padding: EdgeInsets.symmetric(
+                      vertical: screenHeight * 0.01,
+                      horizontal: screenWidth * 0.3),
                   child: Text(
                     'Submit',
-                    style: TextStyle(fontSize: 18.0),
+                    style: TextStyle(fontSize: screenHeight * 0.025),
                   ),
                 ),
               ),

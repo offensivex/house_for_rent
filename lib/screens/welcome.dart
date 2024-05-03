@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:house_for_rent/screens/landloard.dart';
-
 import 'tenant.dart';
 
 class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final Size screenSize = MediaQuery.of(context).size;
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -15,7 +16,7 @@ class WelcomePage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                const SizedBox(height: 120.0),
+                SizedBox(height: screenSize.height * 0.1),
                 const Text(
                   'Welcome',
                   style: TextStyle(
@@ -30,7 +31,7 @@ class WelcomePage extends StatelessWidget {
                     fontSize: 24.0,
                   ),
                 ),
-                const SizedBox(height: 30.0),
+                SizedBox(height: screenSize.height * 0.05),
                 const Text(
                   'Please Choose One Of',
                   style: TextStyle(
@@ -43,7 +44,7 @@ class WelcomePage extends StatelessWidget {
                     fontSize: 20.0,
                   ),
                 ),
-                const SizedBox(height: 40.0),
+                SizedBox(height: screenSize.height * 0.08),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
@@ -60,10 +61,10 @@ class WelcomePage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                       ),
-                      child: const Padding(
+                      child: Padding(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 20, vertical: 15),
-                        child: Text(
+                        child: const Text(
                           'Tenant',
                           style: TextStyle(fontSize: 20.0, color: Colors.white),
                         ),
@@ -73,7 +74,8 @@ class WelcomePage extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => LandlordPage()),
+                          MaterialPageRoute(
+                              builder: (context) => LandlordPage()),
                         );
                       },
                       style: ElevatedButton.styleFrom(
@@ -82,91 +84,91 @@ class WelcomePage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                       ),
-                      child: const Padding(
+                      child: Padding(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 20, vertical: 15),
-                        child: Text(
-                          'Landload',
+                        child: const Text(
+                          'Landlord',
                           style: TextStyle(fontSize: 20.0, color: Colors.white),
                         ),
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(height: 40.0),
-                const Padding(
+                SizedBox(height: screenSize.height * 0.08),
+                Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Text(
+                  child: const Text(
                     'Welcome to our app,',
                     style: TextStyle(
                       fontSize: 22.0,
                     ),
                   ),
                 ),
-                const Padding(
+                Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Text(
+                  child: const Text(
                     'designed for both tenants ',
                     style: TextStyle(
                       fontSize: 22.0,
                     ),
                   ),
                 ),
-                const Padding(
+                Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Text(
+                  child: const Text(
                     'and landlords in mind! ',
                     style: TextStyle(
                       fontSize: 22.0,
                     ),
                   ),
                 ),
-                const Padding(
+                Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Text(
+                  child: const Text(
                     'Whenever you are looking for',
                     style: TextStyle(
                       fontSize: 22.0,
                     ),
                   ),
                 ),
-                const Padding(
+                Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Text(
+                  child: const Text(
                     'the perfect place to call home ',
                     style: TextStyle(
                       fontSize: 22.0,
                     ),
                   ),
                 ),
-                const Padding(
+                Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Text(
+                  child: const Text(
                     'or seeking responsible and.',
                     style: TextStyle(
                       fontSize: 22.0,
                     ),
                   ),
                 ),
-                const Padding(
+                Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Text(
+                  child: const Text(
                     'reliable tenants, we\'ve got',
                     style: TextStyle(
                       fontSize: 22.0,
                     ),
                   ),
                 ),
-                const Padding(
+                Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Text(
+                  child: const Text(
                     'you covered.',
                     style: TextStyle(
                       fontSize: 22.0,
                     ),
                   ),
                 ),
-                const SizedBox(height: 100.0),
+                SizedBox(height: screenSize.height * 0.05),
                 ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
@@ -176,16 +178,16 @@ class WelcomePage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                   ),
-                  child: const Padding(
+                  child: Padding(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 50, vertical: 22),
-                    child: Text(
+                    child: const Text(
                       'Learn More',
                       style: TextStyle(fontSize: 20.0, color: Colors.white),
                     ),
                   ),
                 ),
-                const SizedBox(height: 20.0),
+                SizedBox(height: screenSize.height * 0.1),
               ],
             ),
           ),
